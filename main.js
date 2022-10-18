@@ -169,7 +169,7 @@ function add(){
         priority : priority.value,
         status : statuse.value,
         date : date.value,
-        descriptions : description.value,
+        description : description.value,
     }
     tasks.push(task)
     document.getElementById("myForm").reset();
@@ -191,7 +191,7 @@ function display(){
                 <div class="fs-4">${tasks[i].title}</div>
                 <div class="">
                     <div class="text-gray">${i} created in ${tasks[i].date}</div>
-                    <div class="fs-5 mb-10px">${tasks[i].descriptions}"</div>
+                    <div class="fs-5 mb-10px">${tasks[i].description}"</div>
                 </div>
                 <div class="d-flex justify-content-between ">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
@@ -211,7 +211,7 @@ function display(){
                 <div class="fs-4">${tasks[i].title}</div>
                 <div class="">
                     <div class="text-gray">${i} created in ${tasks[i].date}</div>
-                    <div class="fs-5 mb-10px">${tasks[i].descriptions}"</div>
+                    <div class="fs-5 mb-10px">${tasks[i].description}"</div>
                 </div>
                 <div class="d-flex justify-content-between ">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
@@ -231,7 +231,7 @@ function display(){
                 <div class="fs-4">${tasks[i].title}</div>
                 <div class="">
                     <div class="text-gray">${i} created in ${tasks[i].date}</div>
-                    <div class="fs-5 mb-10px">${tasks[i].descriptions}"</div>
+                    <div class="fs-5 mb-10px">${tasks[i].description}"</div>
                 </div>
                 <div class="d-flex justify-content-between ">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
