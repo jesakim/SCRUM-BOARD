@@ -174,16 +174,18 @@ function add(){
     tasks.push(task)
     document.getElementById("myForm").reset();
     console.log(tasks);
-    todo.innerHTML =' ';
-    inpro.innerHTML =' ';
-    doneses.innerHTML ="";
+    
 }
 
 function display(){
+    todo.innerHTML =' ';
+    inpro.innerHTML =' ';
+    doneses.innerHTML ="";
     for(let i=0;i<tasks.length;i++){
         if(tasks[i].status=="To Do"){
             todo.innerHTML+=`
-            <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" >
+            <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3 " id="butto" data-bs-toggle="modal" 
+            data-bs-target="#exampleModal" onclick="moddisp(${i})">
             <div class="col-1 fs-3 text-green-200 me-10px">
                 <i class="fa-regular fa-circle-question"></i> 
             </div>
@@ -203,7 +205,8 @@ function display(){
         }
         if(tasks[i].status=="In Progress"){
             inpro.innerHTML+=`
-            <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" >
+            <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" id="butto" onclick="moddisp(${i})" data-bs-toggle="modal" 
+            data-bs-target="#exampleModal">
             <div class="col-1 fs-3 text-green-200 me-10px">
                 <i class="fas fa-circle-notch fa-spin"></i> 
             </div>
@@ -223,7 +226,8 @@ function display(){
         }
         if(tasks[i].status=="Done") {
             doneses.innerHTML+=`
-            <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" >
+            <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" id="butto" onclick="moddisp(${i})" data-bs-toggle="modal" 
+            data-bs-target="#exampleModal">
             <div class="col-1 fs-3 text-green-200 me-10px">
                 <i class="fa-regular fa-circle-check"></i> 
             </div>
@@ -242,3 +246,29 @@ function display(){
         `
         }
         }}
+
+document.onload = function() {display()};
+function del(index){
+    tasks.splice(index, 1);
+    display();
+}
+function ind(index){
+    // return index
+    console.log(index);
+}
+
+// document.querySelector('.bg-transparent').addEventListener('click',(e)=>{
+//     e.preventDefault()
+    
+// })
+function moddisp(in1){
+    document.getElementById("modal-footer-close").innerText="Delete"
+    document.getElementById("modal-footer-close").style.backgroundColor="red"
+    document.getElementById("modal-footer-save").innerText="Edit"
+    title.value=tasks[in1].title
+    type.value=tasks[in1].type
+    priority.value=tasks[in1].priority
+    statuse.value=tasks[in1].status
+    date.value=tasks[in1].date
+    description.value=tasks[in1].description
+} 
