@@ -16,7 +16,7 @@
 	
 	<!-- ================== END core-css ================== -->
 </head>
-<body>
+<body id="body">
 
 	<!-- BEGIN #app -->
 	<div id="app" class="app-without-sidebar">
@@ -97,10 +97,9 @@
 				<div class="col-12 col-md-12 col-lg-6 col-xl-4 ">
 					<div class="card mb-20px">
 						<div class="bg-dark rounded-top card-header">
-							<h4 class="text-white px-5 py-10px m-0">Done (<span id="done-tasks-count">4</span>)</h4>
-
+							<h4 class="text-white px-5 py-10px m-0">Done (<span id="done-tasks-count"></span>)</h4>
 						</div>
-						<div class="bg-white mb-20px rounded-3 card-body" id="">
+						
 							<!-- DONE TASKS HERE -->
 							<div class="bg-white mb-20px rounded-3 card-body" id="done-tasks">
 							<button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" >
@@ -119,7 +118,7 @@
 									</div>
 								</div>
 							</button>
-						</div>
+							</div>
 					</div>
 				</div>
 			</div>
@@ -187,18 +186,78 @@
 					  </div>
 				  </form>
 			</div>
-			<div class="modal-footer">
+			<div class="modal-footer" id="modal-footer">
 			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 			  <button type="submit" class="btn btn-primary submit" data-bs-dismiss="modal">Save</button>
 			</div>
 		  </div>
 		</div>
-	  </div>
-	
+	</div>
+	<!-- edit and delete modal -->
+	<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title fs-2" id="exampleModalLabel">Add Task</h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="myForm">
+					<div class="">
+					  <label for="" class="form-label mb-10px">Title</label>
+					  <input type="text" class="form-control" id="title1" aria-describedby="emailHelp">
+					</div>
+					<label class="my-10px">Type</label>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flex" id="feature1" value="feature">
+						<label class="form-check-label mb-10px">
+							Feature
+						</label>
+					  </div>
+					  <div class="form-check">
+						<input class="form-check-input" type="radio" name="flex" id="bug1" value="bug">
+						<label class="form-check-label">
+						  Bug
+						</label>
+					  </div>
+					<label class="my-10px">Priority</label>
+					<select class="form-select" aria-label="Default select example" id="selPriority1">	
+						<option selected value="Low">Low</option>
+						<option value="Medium">Medium</option>
+						<option value="High">High</option>
+						<option value="critical">critical</option>
+					  </select>
+					  <label class="my-10px">Status</label>
+					<select class="form-select" aria-label="Default select example" id="selStatus1">
+						<option value="To Do">To Do</option>
+						<option value="In Progress">In Progress</option>
+						<option value="Done">Done</option>
+					  </select>
+					  <div class="row form-group">
+						<label for="date" class="col-sm-1 col-form-label">Date</label>
+						<div class="col-sm-12">
+							<div class="input-group date" id="datepicker">
+								<input type="date" class="form-control" id="date1">
+							</div>
+						</div>
+					</div>
+					<div class="">
+						<label for="exampleFormControlTextarea1" class="form-label my-10px">Description</label>
+						<textarea class="form-control" id="description1" rows="3"></textarea>
+					  </div>
+				  </form>
+			</div>
+			<div class="modal-footer" id="modal-footer1">
+				
+			</div>
+		  </div>
+		</div>
+	</div>
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
 	<script src="main.js"></script>
+	<script src="assets/js/data.js"></script>
 	<!-- ================== END core-js ================== -->
 </body>
 </html>
