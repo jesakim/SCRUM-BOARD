@@ -48,21 +48,21 @@ function display(){
     todo.innerHTML =' ';
     inpro.innerHTML =' ';
     doneses.innerHTML ="";
-    let todocount=1;
-    let inprocount=1;
-    let donecount=1;
+    let todocount=0;
+    let inprocount=0;
+    let donecount=0;
     for(let i=0;i<tasks.length;i++){
         if(tasks[i].status=="To Do"){
             todo.innerHTML+=`
             <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" onclick="moddisp(${i})" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-            <div class="col-1 fs-3 text-green-200 me-10px">
+            <div class="col-1 fs-3 text-red me-10px">
                 <i class="fa-regular fa-circle-question"></i> 
             </div>
             <div class="col-11">
                 <div class="fs-4">${tasks[i].title}</div>
                 <div class="">
                     <div class="text-gray"># ${i+1} created in ${tasks[i].date}</div>
-                    <div class="fs-5 mb-10px">${tasks[i].description.slice(0,200)}</div>
+                    <div class="fs-5 mb-10px" title="${tasks[i].description}">${tasks[i].description.slice(0,150)}...</div>
                 </div>
                 <div class="d-flex justify-content-between ">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
@@ -76,16 +76,16 @@ function display(){
         if(tasks[i].status=="In Progress"){
             inpro.innerHTML+=`
             <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" onclick="moddisp(${i})" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-            <div class="col-1 fs-3 text-green-200 me-10px">
+            <div class="col-1 fs-3 text-warning me-10px">
                 <i class="fas fa-circle-notch fa-spin"></i> 
             </div>
             <div class="col-11">
                 <div class="fs-4">${tasks[i].title}</div>
                 <div class="">
                     <div class="text-gray"># ${i+1} created in ${tasks[i].date}</div>
-                    <div class="fs-5 mb-10px">${tasks[i].description.slice(0,200)}</div>
+                    <div class="fs-5 mb-10px" title="${tasks[i].description}">${tasks[i].description.slice(0,150)}...</div>
                 </div>
-                <div class="d-flex justify-content-between ">
+                <div class="d-flex">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
                     <span class="bg-gray-300 text-black m-2 fs-5 rounded-2 px-15px py-5px">${tasks[i].type}</span></div>
                 </div>
@@ -102,11 +102,11 @@ function display(){
             </div>
             <div class="col-11">
                 <div class="fs-4">${tasks[i].title}</div>
-                <div class="">
                     <div class="text-gray"># ${i+1} created in ${tasks[i].date}</div>
-                    <div class="fs-5 mb-10px">${tasks[i].description.slice(0,200)}</div>
-                </div>
-                <div class="d-flex justify-content-between ">
+                    <div class="d-flex">
+                        <div class="fs-5 mb-10px z-3" title="${tasks[i].description}">${tasks[i].description.slice(0,150)}</div>
+                    </div>
+                <div class="d-flex justify-content-between">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
                     <span class="bg-gray-300 text-black m-2 fs-5 rounded-2 px-15px py-5px">${tasks[i].type}</span></div>
                 </div>
@@ -116,9 +116,9 @@ function display(){
         donecount+=1
         }
         }
-    document.getElementById("to-do-tasks-count").innerText = todocount-1
-    document.getElementById("in-progress-tasks-count").innerText = inprocount-1
-    document.getElementById("done-tasks-count").innerText = donecount-1
+    document.getElementById("to-do-tasks-count").innerText = todocount;
+    document.getElementById("in-progress-tasks-count").innerText = inprocount;
+    document.getElementById("done-tasks-count").innerText = donecount;
     }
 
 document.getElementById("body").onload =function(){
@@ -165,5 +165,6 @@ function edit(in1){
 
 
 } 
+
 
 
