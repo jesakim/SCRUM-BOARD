@@ -97,14 +97,14 @@ function display(){
         if(tasks[i].status=="Done") {
             doneses.innerHTML+=`
             <button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal1" onclick="moddisp(${i})">
-            <div class="col-1 fs-3 text-green-200 me-10px">
+            <div class="col-1 fs-3 text-green-300 me-10px">
                 <i class="fas fa-check"></i> 
             </div>
             <div class="col-11">
                 <div class="fs-4">${tasks[i].title}</div>
                     <div class="text-gray"># ${i+1} created in ${tasks[i].date}</div>
                     <div class="d-flex">
-                        <div class="fs-5 mb-10px z-3" title="${tasks[i].description}">${tasks[i].description.slice(0,150)}</div>
+                        <div class="fs-5 mb-10px z-3" title="${tasks[i].description}">${tasks[i].description.slice(0,150)}...</div>
                     </div>
                 <div class="d-flex justify-content-between">
                     <div><span class="bg-blue-600 text-white  fs-5 rounded-2 px-15px py-5px ">${tasks[i].priority}</span>
