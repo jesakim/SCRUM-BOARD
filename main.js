@@ -162,9 +162,17 @@ function edit(in1){
     tasks[in1].description=description1.value
     document.getElementById("myForm").reset();
     display();
-
-
 } 
+function delAll(btnStatus){
+    console.log(btnStatus);
+    for (let index = 0; index < tasks.length; index++) {
+        if(tasks[index].status == btnStatus){
+            tasks.splice(index,1);
+            index--;
+        } 
+    }
+    display();
+}
 
 
 

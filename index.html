@@ -43,8 +43,9 @@
 			<div class="row">
 				<div class="col-12done-tasks col-md-12 col-lg-6 col-xl-4 ">
 					<div class="card mb-20px pb-0">
-						<div class="bg-dark rounded-top card-header">
+						<div class="bg-dark rounded-top card-header d-flex justify-content-between">
 							<h4 class="text-white px-5 py-10px m-0">To do (<span id="to-do-tasks-count">5</span>)</h4>
+							<button class="text-red fs-3 bg-transparent border-0" data-bs-toggle="tooltip" data-bs-html="true" title="Delete all To Do tasks" onclick="delAll('To Do')"><i class="fa-solid fa-trash"></i></button>
 						</div>
 						<div class="bg-white mb-20px rounded-3 card-body" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
@@ -69,13 +70,13 @@
 				</div>
 				<div class="col-12 col-md-12 col-lg-6 col-xl-4 ">
 					<div class="card mb-20px">
-						<div class="bg-dark rounded-top card-header">
+						<div class="bg-dark rounded-top card-header d-flex justify-content-between">
 							<h4 class="text-white px-5 py-10px m-0">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
-
+							<button class="text-danger fs-3 bg-transparent border-0" data-bs-toggle="tooltip" data-bs-html="true" title='Delete all In Progress tasks' onclick="delAll('In Progress')"><i class="fa-solid fa-trash"></i></button>
 						</div>
 						<div class="bg-white mb-20px rounded-3 card-body" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3" >
+							<button class="bg-transparent w-100 border-0 border-bottom d-flex text-start pb-3">
 								<div class="col-1 fs-3 text-green-200 me-10px">
 									<i class="fas fa-circle-notch fa-spin"></i> 
 								</div>
@@ -96,8 +97,9 @@
 				</div>
 				<div class="col-12 col-md-12 col-lg-6 col-xl-4 ">
 					<div class="card mb-20px">
-						<div class="bg-dark rounded-top card-header">
+						<div class="bg-dark rounded-top card-header d-flex justify-content-between">
 							<h4 class="text-white px-5 py-10px m-0">Done (<span id="done-tasks-count"></span>)</h4>
+							<button class="text-red fs-3 bg-transparent border-0" data-bs-toggle="tooltip" data-bs-html="true" title="Delete all Done tasks" onclick="delAll('Done')"><i class="fa-solid fa-trash"></i></button>
 						</div>
 						
 							<!-- DONE TASKS HERE -->
